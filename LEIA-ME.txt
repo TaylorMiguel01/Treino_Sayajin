@@ -1,0 +1,26 @@
+# Treino Saiyajin — PWA
+
+## Arquivos
+- `index.html`: aplicativo completo (HTML, CSS e JavaScript).
+- `manifest.webmanifest`: nome, ícones e configuração de instalação.
+- `service-worker.js`: cache básico para funcionamento offline.
+- `icon-192.png` e `icon-512.png`: ícones do aplicativo.
+
+## Como testar
+Acesse por HTTPS para validar o PWA. Para teste local, abra `index.html` no Chrome; os dados locais usam IndexedDB, mas Service Worker/PWA não funciona em `file://`.
+
+## Publicar grátis com GitHub Pages
+1. Crie um repositório no GitHub.
+2. Envie os cinco arquivos desta pasta para a raiz do repositório.
+3. Em **Settings → Pages**, escolha publicar a partir da branch principal e da pasta `/ (root)`.
+4. Abra o endereço HTTPS gerado no Chrome do Android.
+5. Use o menu do Chrome → **Instalar app** ou **Adicionar à tela inicial**.
+
+## Dados e privacidade
+Os registros ficam no IndexedDB do navegador/dispositivo. Não há sincronização entre aparelhos nem envio de dados para servidor. Exporte o backup JSON regularmente. Limpar dados do navegador pode apagar os registros locais.
+
+## Observações importantes
+- O funcionamento offline começa após o carregamento inicial bem-sucedido e a ativação do Service Worker.
+- O tempo dos cronômetros é calculado com base no horário final previsto, então a contagem pode ser recuperada ao voltar ao app.
+- Importar backup permite mesclar por ID ou substituir os dados existentes. Faça um backup antes de substituir.
+- Este pacote foi verificado quanto à presença dos arquivos e sintaxe básica dos scripts, mas não foi possível realizar testes completos em dispositivo Android real neste ambiente.
